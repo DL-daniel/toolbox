@@ -1,6 +1,6 @@
 const zh: Record<string, any> = {
   nav: {
-    title: '工具箱',
+    title: '慕泽工具箱',
     home: '首页',
   },
   home: {

@@ -15,12 +15,12 @@ function switchLang(code: string) {
   locale.value = code
   localStorage.setItem('toolbox-lang', code)
   // 刷新页面标题
-  document.title = code === 'zh-CN' ? '工具箱' : 'Toolbox'
+  document.title = code === 'zh-CN' ? '慕泽工具箱' : 'Toolbox'
 }
 
 // 初始化页面标题
 watch(locale, (val) => {
-  document.title = val === 'zh-CN' ? '工具箱' : 'Toolbox'
+  document.title = val === 'zh-CN' ? '慕泽工具箱' : 'Toolbox'
 }, { immediate: true })
 </script>
 
