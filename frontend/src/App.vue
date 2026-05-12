@@ -1,15 +1,36 @@
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import LanguageSwitcher from './components/LanguageSwitcher.vue'
 import { watch } from 'vue'
 
 const router = useRouter()
+const route = useRoute()
 const { t, locale } = useI18n()
 
-// 动态更新页面标题
+// 动态更新页面标题和描述
+function updateMeta() {
+  const siteName = t('nav.title')
+  const pageTitle = route.meta?.title as string | undefined
+  document.title = pageTitle ? siteName + ' - ' + pageTitle : siteName
+  
+  // 更新 meta description
+  let descEl = document.querySelector('meta[name="description"]')
+  if (!descEl) {
+    descEl = document.createElement('meta')
+    descEl.setAttribute('name', 'description')
+    document.head.appendChild(descEl)
+  }
+  const pageDesc = route.meta?.description as string | undefined
+  descEl.setAttribute('content', pageDesc || siteName + ' - 在线实用工具箱，提供Base64编码、CRC校验、坐标转换、二维码生成、PDF处理等20+免费在线工具')
+}
+
 watch(locale, () => {
-  document.title = t('nav.title')
+  updateMeta()
+})
+// 路由变化时更新标题和描述
+watch(() => route.path, () => {
+  updateMeta()
 }, { immediate: true })
 </script>
 
