@@ -2,15 +2,51 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="google-adsense-account" content="ca-pub-9077824570796930">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9077824570796930"
-     crossorigin="anonymous"></script>
+    <meta name="theme-color" content="#667eea" />
+
+    <!-- SEO defaults (overridden per-page by App.vue) -->
+    <meta name="description" content="慕泽工具箱 - 在线实用工具箱，提供Base64编码、CRC校验、坐标转换、二维码生成、PDF处理、汇率换算、正则测试、单位换算等44+免费在线工具" />
+    <meta name="keywords" content="在线工具箱, 慕泽工具箱, 免费工具, Base64, 编码解码, CRC校验, 二维码, 坐标转换, PDF处理, 五笔学习, 汇率换算, 在线工具" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="apple-touch-icon" href="/logo.svg" />
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://open.er-api.com" />
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+
+    <!-- Google AdSense -->
+    <meta name="google-adsense-account" content="ca-pub-9077824570796930" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9077824570796930" crossorigin="anonymous"></script>
+
     <title>慕泽工具箱</title>
   </head>
   <body>
     <div id="app"></div>
+    <!-- JSON-LD fallback (App.vue updates per-page below) -->
+    <script type="application/ld+json" id="ld-schema">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "慕泽工具箱",
+      "alternateName": "Muze Toolbox",
+      "url": "https://toolbox.mzxy.top",
+      "description": "在线实用工具箱，提供Base64编码、CRC校验、坐标转换、二维码生成、PDF处理、汇率换算、正则测试、单位换算等44+免费在线工具",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "CNY"
+      },
+      "inLanguage": ["zh-CN", "en"]
+    }
+    </script>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
