@@ -2,6 +2,7 @@
 import { ref, computed, watch } from 'vue'
 import CryptoJS from 'crypto-js'
 import { useI18nt } from '@/i18n/useI18nt'
+import UsageGuide from '@/components/UsageGuide.vue'
 
 const { t } = useI18nt()
 
@@ -285,7 +286,9 @@ function clearAll() {
           class="input-field"
         />
       </div>
-    </template>
+    
+    <UsageGuide toolKey="cryptoTool" />
+  </template>
 
     <!-- Key Input -->
     <div class="form-group">

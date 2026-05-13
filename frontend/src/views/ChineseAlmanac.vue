@@ -2,6 +2,7 @@
 import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { getLunarYearGanZhi, getZodiac, getRandomYiJi } from '../data/lunarData'
+import UsageGuide from '@/components/UsageGuide.vue'
 const { t } = useI18n()
 const now = new Date()
 const year = ref(now.getFullYear())
@@ -37,7 +38,9 @@ const dateStr = computed(() => year.value + '-' + String(month.value).padStart(2
       <button class="refresh-btn" @click="refresh">🔄 {{ t('chineseAlmanac.refresh') }}</button>
     </div>
   </div>
-</template>
+
+    <UsageGuide toolKey="chineseAlmanac" />
+  </template>
 <style scoped>
 .almanac{max-width:500px;margin:0 auto}
 .date-picker{display:flex;align-items:center;gap:.5rem;justify-content:center;margin:1rem 0}

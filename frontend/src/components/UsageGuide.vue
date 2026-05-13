@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-const { locale } = useI18n()
+import { toolTips } from '@/data/toolTips'
 
-defineProps<{
-  tips: { icon: string; zh: string; en: string }[]
-}>()
+const { locale } = useI18n()
+const props = defineProps<{ toolKey: string }>()
+const tips = toolTips[props.toolKey]
 </script>
 
 <template>
-  <div class="guide">
+  <div v-if="tips && tips.length" class="guide">
     <div class="guide-header">
       <span class="guide-icon">💡</span>
       <span class="guide-title">{{ locale.startsWith('zh') ? '使用说明' : 'How to Use' }}</span>

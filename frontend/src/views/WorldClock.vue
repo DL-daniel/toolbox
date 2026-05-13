@@ -2,6 +2,7 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useI18nt } from '@/i18n/useI18nt'
 import cities, { REGION_META, type CityInfo } from '@/utils/worldCities'
+import UsageGuide from '@/components/UsageGuide.vue'
 
 const { t, locale } = useI18nt()
 
@@ -298,7 +299,9 @@ function timeDiff(tz: string): string {
       </div>
     </div>
   </div>
-</template>
+
+    <UsageGuide toolKey="worldClock" />
+  </template>
 
 <style scoped>
 .world-clock {

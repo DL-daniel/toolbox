@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useI18nt } from '@/i18n/useI18nt'
+import UsageGuide from '@/components/UsageGuide.vue'
 const { t } = useI18nt()
 
 const imageUrl = ref('')
@@ -131,7 +132,9 @@ function download() {
       <button @click="download" class="btn download">{{ t('imageWatermark.download') }}</button>
     </div>
   </div>
-</template>
+
+    <UsageGuide toolKey="imageWatermark" />
+  </template>
 
 <style scoped>
 .tool { max-width: 700px; margin: 0 auto; }

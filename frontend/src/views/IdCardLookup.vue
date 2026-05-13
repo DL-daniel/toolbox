@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { lookupIdCard, validateIdCard } from '../data/idCardData'
+import UsageGuide from '@/components/UsageGuide.vue'
 const { t } = useI18n()
 const idInput = ref('')
 const result = ref<{ province: string; city: string; district: string } | null>(null)
@@ -46,7 +47,9 @@ function doLookup() {
       </div>
     </div>
   </div>
-</template>
+
+    <UsageGuide toolKey="idCardLookup" />
+  </template>
 
 <style scoped>
 .id-card { max-width: 600px; margin: 0 auto; }

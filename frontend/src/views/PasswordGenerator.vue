@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import UsageGuide from '@/components/UsageGuide.vue'
 const { t } = useI18n()
 const length = ref(16)
 const useUppercase = ref(true)
@@ -70,7 +71,9 @@ function copyPwd() {
       </div>
     </div>
   </div>
-</template>
+
+    <UsageGuide toolKey="passwordGenerator" />
+  </template>
 
 <style scoped>
 .pwd-gen { max-width: 500px; margin: 0 auto; }

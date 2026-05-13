@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import UsageGuide from '@/components/UsageGuide.vue'
 const { t } = useI18n()
 const tsInput = ref('')
 const dateInput = ref('')
@@ -50,7 +51,9 @@ function copy(v: string) { navigator.clipboard.writeText(v) }
       </div>
     </div>
   </div>
-</template>
+
+    <UsageGuide toolKey="timestampConverter" />
+  </template>
 
 <style scoped>
 .ts-conv { max-width: 500px; margin: 0 auto; }

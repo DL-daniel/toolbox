@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import { useI18nt } from '@/i18n/useI18nt'
 const { t } = useI18nt()
 import { PDFDocument } from 'pdf-lib'
+import UsageGuide from '@/components/UsageGuide.vue'
 
 interface PdfFile { id: number; name: string; size: number; buffer: ArrayBuffer; preview?: string }
 const files = ref<PdfFile[]>([])
@@ -126,7 +127,9 @@ function download() {
     </div>
     <p v-if="status" class="status">{{ status }}</p>
   </div>
-</template>
+
+    <UsageGuide toolKey="pdfMerger" />
+  </template>
 
 <style scoped>
 .tool { max-width: 720px; margin: 0 auto; }

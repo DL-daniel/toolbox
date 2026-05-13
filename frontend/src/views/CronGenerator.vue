@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useI18nt } from '@/i18n/useI18nt'
+import UsageGuide from '@/components/UsageGuide.vue'
 
 const { t } = useI18nt()
 
@@ -248,7 +249,9 @@ function applyExample(expr: string) {
       </div>
     </section>
   </div>
-</template>
+
+    <UsageGuide toolKey="cronGenerator" />
+  </template>
 
 <style scoped>
 .cron-tool {

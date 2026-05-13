@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { lookupPhone } from '../data/phoneData'
+import UsageGuide from '@/components/UsageGuide.vue'
 
 const { t } = useI18n()
 const phoneInput = ref('')
@@ -33,7 +34,9 @@ function doLookup() {
       <p v-else class="no-result">{{ t('phoneLookup.noResult') }}</p>
     </div>
   </div>
-</template>
+
+    <UsageGuide toolKey="phoneLookup" />
+  </template>
 
 <style scoped>
 .phone-lookup { max-width: 600px; margin: 0 auto; }

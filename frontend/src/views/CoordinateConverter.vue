@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
+import UsageGuide from '@/components/UsageGuide.vue'
 import { useI18nt } from '@/i18n/useI18nt'
 import {
   type CoordSystem,
@@ -222,7 +223,9 @@ function formatCoordAxis(lat: number, lng: number): string {
       </div>
     </div>
   </div>
-</template>
+
+    <UsageGuide toolKey="coordConverter" />
+  </template>
 
 <style scoped>
 .coord-converter {

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 import { ref } from 'vue'
+import UsageGuide from '@/components/UsageGuide.vue'
 const { t } = useI18n()
 
 interface PhoneEntry { name: string; phone: string; category: string }
@@ -67,7 +68,9 @@ const catLabel = (c: string) => t('emergencyPhones.cat_' + c)
       </div>
     </div>
   </div>
-</template>
+
+    <UsageGuide toolKey="emergencyPhones" />
+  </template>
 
 <style scoped>
 .emergency-phones { max-width: 600px; margin: 0 auto; }

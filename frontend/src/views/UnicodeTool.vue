@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useI18nt } from '@/i18n/useI18nt'
+import UsageGuide from '@/components/UsageGuide.vue'
 
 const { t } = useI18nt()
 
@@ -287,7 +288,9 @@ const decodedResult = computed(() => {
       <div v-if="copyFeedback" class="toast">{{ copyFeedback }}</div>
     </Transition>
   </div>
-</template>
+
+    <UsageGuide toolKey="unicodeTool" />
+  </template>
 
 <style scoped>
 .unicode-tool {

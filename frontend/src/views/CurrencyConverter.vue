@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import UsageGuide from '@/components/UsageGuide.vue'
 const { t } = useI18n()
 
 const currencies = [
@@ -172,7 +173,9 @@ fetchRates()
       </div>
     </div>
   </div>
-</template>
+
+    <UsageGuide toolKey="currencyConverter" />
+  </template>
 
 <style scoped>
 .cc { max-width: 520px; margin: 0 auto; }

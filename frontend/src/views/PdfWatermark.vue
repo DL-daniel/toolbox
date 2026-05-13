@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import { useI18nt } from '@/i18n/useI18nt'
 const { t } = useI18nt()
 import { PDFDocument, rgb, StandardFonts, RotationTypes } from 'pdf-lib'
+import UsageGuide from '@/components/UsageGuide.vue'
 
 const pdfBuffer = ref<ArrayBuffer | null>(null)
 const pdfName = ref('')
@@ -105,7 +106,9 @@ function download() {
     <button v-if="resultBlob" @click="download" class="btn download">{{ t('pdfWatermark.download') }}</button>
     <p v-if="status" class="status">{{ status }}</p>
   </div>
-</template>
+
+    <UsageGuide toolKey="pdfWatermark" />
+  </template>
 
 <style scoped>
 .tool { max-width: 640px; margin: 0 auto; }

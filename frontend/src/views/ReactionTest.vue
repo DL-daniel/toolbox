@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import UsageGuide from '@/components/UsageGuide.vue'
 const { t } = useI18n()
 const status = ref<'waiting'|'ready'|'running'|'result'>('waiting')
 const result = ref<number[]>([])
@@ -80,7 +81,9 @@ function grade(ms: number): string {
     <button v-if="status==='waiting' && result.length===0" class="btn start-btn" @click="startTest">{{ t('reactionTest.start') }}</button>
     <button v-if="status==='waiting' && result.length>0" class="btn start-btn" @click="startTest">{{ t('reactionTest.next') }}</button>
   </div>
-</template>
+
+    <UsageGuide toolKey="reactionTest" />
+  </template>
 
 <style scoped>
 .reaction-test { max-width: 500px; margin: 0 auto; text-align:center; }

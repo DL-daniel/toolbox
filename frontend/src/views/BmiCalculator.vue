@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import UsageGuide from '@/components/UsageGuide.vue'
 const { t } = useI18n()
 const height = ref(170)
 const weight = ref(65)
@@ -65,7 +66,9 @@ const catColor = computed(() => {
       </div>
     </div>
   </div>
-</template>
+
+    <UsageGuide toolKey="bmiCalculator" />
+  </template>
 
 <style scoped>
 .bmi-calc { max-width: 500px; margin: 0 auto; text-align:center; }

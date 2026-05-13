@@ -4,6 +4,7 @@ import { useI18nt } from '@/i18n/useI18nt'
 const { t } = useI18nt()
 import * as toml from 'smol-toml'
 import yaml from 'js-yaml'
+import UsageGuide from '@/components/UsageGuide.vue'
 
 const srcFormat = ref<'json' | 'yaml' | 'toml'>('json')
 const dstFormat = ref<'json' | 'yaml' | 'toml'>('yaml')
@@ -89,7 +90,9 @@ async function copyOutput() {
     </div>
     <p v-if="error" class="error">{{ error }}</p>
   </div>
-</template>
+
+    <UsageGuide toolKey="formatConverter" />
+  </template>
 
 <style scoped>
 .tool { max-width: 900px; margin: 0 auto; }

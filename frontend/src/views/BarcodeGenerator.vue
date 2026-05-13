@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, watch, nextTick } from 'vue'
 import { useI18n } from 'vue-i18n'
+import UsageGuide from '@/components/UsageGuide.vue'
 const { t } = useI18n()
 const text = ref('')
 const format = ref<'CODE128'|'CODE39'|'EAN13'|'UPC'>('CODE128')
@@ -57,7 +58,9 @@ function download() {
       <button class="btn btn-sm" @click="download">{{ t('barcodeGenerator.download') }}</button>
     </div>
   </div>
-</template>
+
+    <UsageGuide toolKey="barcodeGenerator" />
+  </template>
 
 <style scoped>
 .barcode-gen { max-width: 500px; margin: 0 auto; text-align:center; }

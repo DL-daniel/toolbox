@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import { useI18nt } from '@/i18n/useI18nt'
 const { t } = useI18nt()
 import forge from 'node-forge'
+import UsageGuide from '@/components/UsageGuide.vue'
 
 const keySize = ref(2048)
 const passphrase = ref('')
@@ -103,7 +104,9 @@ async function copy(text: string, label: string) {
 
     <Transition name="fade"><div v-if="copyMsg" class="toast">{{ copyMsg }}</div></Transition>
   </div>
-</template>
+
+    <UsageGuide toolKey="rsaGenerator" />
+  </template>
 
 <style scoped>
 .tool { max-width: 720px; margin: 0 auto; }

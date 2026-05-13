@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue'
 import { useI18nt } from '@/i18n/useI18nt'
+import UsageGuide from '@/components/UsageGuide.vue'
 
 const { t } = useI18nt()
 
@@ -211,7 +212,9 @@ function copyAll() {
           <template v-if="inputMode === 'hex' && currentBytes.length">
             &nbsp;·&nbsp;
             <span class="mono-sm">{{ currentBytes.map(b => b.toString(16).toUpperCase().padStart(2, '0')).join(' ') }}</span>
-          </template>
+          
+    <UsageGuide toolKey="crcTool" />
+  </template>
         </span>
         <button v-if="input" class="btn btn-clear" @click="input = ''; hexParseError = ''">{{ t('crcTool.clear') }}</button>
       </div>

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import UsageGuide from '@/components/UsageGuide.vue'
 const { t } = useI18n()
 const url = ref('wss://echo.websocket.org')
 const message = ref('')
@@ -62,7 +63,9 @@ function clearLog() { log.value = [] }
       </div>
     </div>
   </div>
-</template>
+
+    <UsageGuide toolKey="websocketTester" />
+  </template>
 
 <style scoped>
 .ws-tester { max-width: 600px; margin: 0 auto; }

@@ -5,6 +5,7 @@ const { t } = useI18nt()
 import { PDFDocument, rgb, StandardFonts } from 'pdf-lib'
 import * as pdfjsLib from 'pdfjs-dist'
 import Tesseract from 'tesseract.js'
+import UsageGuide from '@/components/UsageGuide.vue'
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
   'pdfjs-dist/build/pdf.worker.min.mjs', import.meta.url
@@ -153,7 +154,9 @@ function download() {
     <button v-if="resultBlob" @click="download" class="btn download">{{ t('pdfCompressor.download') }}</button>
     <p v-if="status" class="status">{{ status }}</p>
   </div>
-</template>
+
+    <UsageGuide toolKey="pdfCompressor" />
+  </template>
 
 <style scoped>
 .tool { max-width: 640px; margin: 0 auto; }

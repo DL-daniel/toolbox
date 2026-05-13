@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useI18nt } from '@/i18n/useI18nt'
+import UsageGuide from '@/components/UsageGuide.vue'
 const { t } = useI18nt()
 
 const raw = ref('')
@@ -142,7 +143,9 @@ function typeClass(t: string) {
             <span class="key-name leaf">{{ node.key }}</span>
             <span :class="['val', typeClass(node.type)]">{{ node.value }}</span>
             <span class="type-badge mini" :class="typeClass(node.type)">{{ node.type }}</span>
-          </template>
+          
+    <UsageGuide toolKey="jsonParser" />
+  </template>
         </div>
       </div>
     </div>

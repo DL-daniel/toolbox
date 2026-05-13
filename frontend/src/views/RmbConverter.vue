@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { rmbToChinese } from '@/utils/rmb'
 import { useI18nt } from '@/i18n/useI18nt'
+import UsageGuide from '@/components/UsageGuide.vue'
 
 const { t, locale } = useI18nt()
 
@@ -98,7 +99,9 @@ function handleInput() {
       </div>
     </div>
   </div>
-</template>
+
+    <UsageGuide toolKey="rmbConverter" />
+  </template>
 
 <style scoped>
 .rmb-converter {

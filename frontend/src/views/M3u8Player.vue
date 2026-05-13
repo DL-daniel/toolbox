@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onUnmounted, nextTick } from 'vue'
 import { useI18nt } from '@/i18n/useI18nt'
+import UsageGuide from '@/components/UsageGuide.vue'
 
 const { t } = useI18nt()
 
@@ -326,7 +327,9 @@ onUnmounted(() => {
       </ul>
     </div>
   </div>
-</template>
+
+    <UsageGuide toolKey="m3u8Player" />
+  </template>
 
 <style scoped>
 .m3u8-player {

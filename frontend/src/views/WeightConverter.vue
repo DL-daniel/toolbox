@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import UsageGuide from '@/components/UsageGuide.vue'
 const { t } = useI18n()
 const units = [
   { key:'kg', name:'kg', factor:1 },
@@ -30,7 +31,9 @@ const results = computed(() => {
     <div class="convert-row"><input v-model.number="fromVal" type="number" class="input" /><select v-model="fromUnit" class="select"><option v-for="u in units" :key="u.key" :value="u.key">{{ u.name }}</option></select></div>
     <div class="results"><div v-for="r in results" :key="r.unit.key" class="result-row"><span class="r-name">{{ r.unit.name }}</span><span class="r-val">{{ r.value < 0.0001 ? r.value.toExponential(4) : r.value.toLocaleString(undefined, {maximumFractionDigits:6}) }}</span></div></div>
   </div>
-</template>
+
+    <UsageGuide toolKey="weightConverter" />
+  </template>
 <style scoped>
 .converter{max-width:500px;margin:0 auto}
 .convert-row{display:flex;gap:.5rem;margin:1rem 0}

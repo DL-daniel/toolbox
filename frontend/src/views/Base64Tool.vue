@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useI18nt } from '@/i18n/useI18nt'
+import UsageGuide from '@/components/UsageGuide.vue'
 
 const { t } = useI18nt()
 
@@ -165,7 +166,9 @@ const placeholderText = computed(() =>
       ></textarea>
     </div>
   </div>
-</template>
+
+    <UsageGuide toolKey="base64" />
+  </template>
 
 <style scoped>
 .base64-tool {

@@ -3,6 +3,7 @@ import { ref, watch, onMounted } from 'vue'
 import CryptoJS from 'crypto-js'
 import { useI18nt } from '@/i18n/useI18nt'
 import { COMMON_PASSWORDS } from '@/utils/md5Dict'
+import UsageGuide from '@/components/UsageGuide.vue'
 
 const { t } = useI18nt()
 
@@ -196,7 +197,9 @@ function doLookup() {
       </div>
     </div>
   </div>
-</template>
+
+    <UsageGuide toolKey="md5Tool" />
+  </template>
 
 <style scoped>
 .md5-tool {

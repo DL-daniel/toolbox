@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import UsageGuide from '@/components/UsageGuide.vue'
 import { cityData } from '../data/cityData'
 const { t } = useI18n()
 const query = ref('')
@@ -32,7 +33,9 @@ const results = computed(() => {
     </div>
     <p v-else-if="query" class="no-result">{{ t('areaCodeLookup.noResult') }}</p>
   </div>
-</template>
+
+    <UsageGuide toolKey="areaCodeZip" />
+  </template>
 
 <style scoped>
 .area-code { max-width: 600px; margin: 0 auto; }

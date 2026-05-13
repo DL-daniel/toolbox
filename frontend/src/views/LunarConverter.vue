@@ -2,6 +2,7 @@
 import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { solarToLunar } from '../data/lunarData'
+import UsageGuide from '@/components/UsageGuide.vue'
 const { t } = useI18n()
 const now = new Date()
 const year = ref(now.getFullYear())
@@ -28,7 +29,9 @@ const result = computed(() => {
       <p class="lunar-gz">{{ t('lunarConverter.zodiac') }}: <strong>{{ result.zodiac }}</strong></p>
     </div>
   </div>
-</template>
+
+    <UsageGuide toolKey="lunarConverter" />
+  </template>
 <style scoped>
 .lunar{max-width:500px;margin:0 auto}
 .date-picker{display:flex;align-items:center;gap:.5rem;justify-content:center;margin:1.5rem 0}

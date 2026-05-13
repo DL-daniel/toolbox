@@ -2,6 +2,7 @@
 import { ref, watch } from 'vue'
 import { useI18nt } from '@/i18n/useI18nt'
 import QRCode from 'qrcode'
+import UsageGuide from '@/components/UsageGuide.vue'
 
 const { t } = useI18nt()
 
@@ -153,7 +154,9 @@ function handleClear() {
       <p>{{ t('qrGenerator.empty') }}</p>
     </div>
   </div>
-</template>
+
+    <UsageGuide toolKey="qrGenerator" />
+  </template>
 
 <style scoped>
 .qr-generator {

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useI18nt } from '@/i18n/useI18nt'
+import UsageGuide from '@/components/UsageGuide.vue'
 
 const { t } = useI18nt()
 
@@ -215,7 +216,9 @@ function openColorPicker() {
       </div>
     </div>
   </div>
-</template>
+
+    <UsageGuide toolKey="colorConverter" />
+  </template>
 
 <style scoped>
 .color-converter {

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import UsageGuide from '@/components/UsageGuide.vue'
 const { t } = useI18n()
 const pattern = ref('')
 const flags = ref('gm')
@@ -51,7 +52,9 @@ const error = computed(() => {
       <div v-else class="replace-result"><code>{{ matches[0].full }}</code></div>
     </div>
   </div>
-</template>
+
+    <UsageGuide toolKey="regexTester" />
+  </template>
 
 <style scoped>
 .regex{max-width:700px;margin:0 auto}
