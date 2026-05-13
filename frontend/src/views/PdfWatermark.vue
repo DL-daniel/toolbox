@@ -78,8 +78,13 @@ function download() {
 
 <template>
   <div class="tool">
-    <h2>{{ t('pdfWatermark.title') }}</h2>
-    <p class="subtitle">{{ t('pdfWatermark.subtitle') }}</p>
+    <div class="tool-header">
+
+      <h2>{{ t('pdfWatermark.title') }}</h2>
+
+      <p class="desc">{{ t('pdfWatermark.subtitle') }}</p>
+
+    </div>
 
     <div class="upload-area" @click="openFilePicker" @dragover.prevent @drop.prevent="onDrop">
       <input ref="fileInput" type="file" accept=".pdf" @change="onFile" hidden />

@@ -89,8 +89,13 @@ function download() {
 
 <template>
   <div class="tool">
-    <h2>{{ t('imageWatermark.title') }}</h2>
-    <p class="subtitle">{{ t('imageWatermark.subtitle') }}</p>
+    <div class="tool-header">
+
+      <h2>{{ t('imageWatermark.title') }}</h2>
+
+      <p class="desc">{{ t('imageWatermark.subtitle') }}</p>
+
+    </div>
 
     <div class="upload-area" @click="openFilePicker" @dragover.prevent @drop.prevent="onDrop">
       <input ref="fileInput" type="file" accept="image/*" @change="onFile" hidden />

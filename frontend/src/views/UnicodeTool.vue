@@ -159,8 +159,13 @@ const decodedResult = computed(() => {
 
 <template>
   <div class="unicode-tool">
-    <h2>{{ t('unicodeTool.title') }}</h2>
-    <p class="subtitle">{{ t('unicodeTool.subtitle') }}</p>
+    <div class="tool-header">
+
+      <h2>{{ t('unicodeTool.title') }}</h2>
+
+      <p class="desc">{{ t('unicodeTool.subtitle') }}</p>
+
+    </div>
 
     <!-- Input -->
     <section class="section">

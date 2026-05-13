@@ -1,0 +1,365 @@
+/* ========================================
+   全局工具样式 — 为所有工具界面提供精美基础样式
+   Specificity 用 :where() 保持最低，scoped 样式可正常覆盖
+   ======================================== */
+
+/* ---- CSS Variables ---- */
+:root {
+  --tool-primary: #667eea;
+  --tool-primary-dark: #5a6fd6;
+  --tool-accent: #764ba2;
+  --tool-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --tool-bg: #ffffff;
+  --tool-bg-alt: #f8f9fc;
+  --tool-border: #e0e0e0;
+  --tool-border-light: #f0f0f0;
+  --tool-text: #1a1a1a;
+  --tool-text-secondary: #666;
+  --tool-text-muted: #999;
+  --tool-radius: 10px;
+  --tool-radius-sm: 8px;
+  --tool-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  --tool-shadow-hover: 0 6px 20px rgba(102,126,234,0.15);
+}
+
+/* ---- Tool Header (section title + desc) ---- */
+:where(.tool-header) {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+:where(.tool-header) :where(h2) {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 0.4rem 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+:where(.tool-header) :where(p, .desc) {
+  font-size: 0.9rem;
+  color: #888;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ---- Input fields ---- */
+:where(.input, .search-input, .amount-input) {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  border: 1.5px solid #d0d5dd;
+  border-radius: var(--tool-radius-sm);
+  font-size: 0.95rem;
+  color: var(--tool-text);
+  background: var(--tool-bg);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+:where(.input, .search-input, .amount-input):focus {
+  border-color: var(--tool-primary);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.12);
+}
+:where(.input, .search-input, .amount-input)::placeholder {
+  color: #bbb;
+}
+
+/* select dropdowns */
+:where(select.input, select) {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.8rem center;
+  padding-right: 2.2rem;
+}
+
+/* ---- Textareas ---- */
+:where(.textarea) {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #d0d5dd;
+  border-radius: var(--tool-radius-sm);
+  font-size: 0.92rem;
+  color: var(--tool-text);
+  background: var(--tool-bg);
+  outline: none;
+  resize: vertical;
+  font-family: inherit;
+  line-height: 1.6;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+:where(.textarea):focus {
+  border-color: var(--tool-primary);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.12);
+}
+
+/* ---- Buttons ---- */
+:where(.btn) {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.4rem;
+  background: var(--tool-gradient);
+  color: #fff;
+  border: none;
+  border-radius: var(--tool-radius-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.2s, opacity 0.2s;
+  white-space: nowrap;
+  user-select: none;
+}
+:where(.btn):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(102, 126, 234, 0.3);
+}
+:where(.btn):active {
+  transform: translateY(0);
+}
+:where(.btn):disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Secondary / ghost button variant */
+:where(.btn-copy, .btn-sm, .btn-clear, .swap-btn, .qp-btn) {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 1rem;
+  background: #eef2ff;
+  color: var(--tool-primary);
+  border: 1px solid #dde0ff;
+  border-radius: var(--tool-radius-sm);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.15s;
+  white-space: nowrap;
+  user-select: none;
+}
+:where(.btn-copy, .btn-sm, .btn-clear, .swap-btn, .qp-btn):hover {
+  background: #dde0ff;
+  border-color: #ccd0ff;
+  transform: translateY(-1px);
+}
+:where(.btn-copy, .btn-sm, .btn-clear, .swap-btn, .qp-btn):active {
+  transform: translateY(0);
+}
+
+/* ---- Result Cards ---- */
+:where(.result-card, .result-box) {
+  background: var(--tool-bg);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  box-shadow: var(--tool-shadow);
+  border: 1px solid var(--tool-border-light);
+  margin: 0.5rem 0;
+}
+:where(.result-row) {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #f5f5f5;
+  font-size: 0.9rem;
+}
+:where(.result-row):last-child {
+  border-bottom: none;
+}
+:where(.r-name) {
+  color: var(--tool-text-muted);
+  font-size: 0.8rem;
+  min-width: 70px;
+  flex-shrink: 0;
+}
+:where(.r-val) {
+  color: var(--tool-text);
+  font-weight: 600;
+  font-family: 'SF Mono', 'Cascadia Code', 'Consolas', monospace;
+  word-break: break-all;
+  flex: 1;
+}
+
+/* ---- Error Messages ---- */
+:where(.error, .error-msg) {
+  padding: 0.6rem 1rem;
+  background: #fef2f2;
+  border: 1px solid #fee2e2;
+  border-radius: var(--tool-radius-sm);
+  color: #c62828;
+  font-size: 0.85rem;
+  margin: 0.5rem 0;
+}
+
+/* ---- Tab Navigation ---- */
+:where(.tabs, .main-tabs, .sub-tabs, .mode-tabs, .diff-tabs) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+:where(.tabs, .main-tabs, .sub-tabs, .mode-tabs, .diff-tabs) :where(button, .tab) {
+  padding: 0.45rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  background: #f8f9fa;
+  color: #666;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+:where(.tabs, .main-tabs, .sub-tabs, .mode-tabs, .diff-tabs) :where(button, .tab):hover {
+  background: #eef2ff;
+  border-color: #d0d5ff;
+  color: var(--tool-primary);
+}
+:where(.tabs, .main-tabs, .sub-tabs, .mode-tabs, .diff-tabs) :where(.active, button.active) {
+  background: var(--tool-gradient);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+/* ---- Upload Area ---- */
+:where(.upload-area) {
+  border: 2px dashed #d0d5dd;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  background: #fafbfc;
+}
+:where(.upload-area):hover {
+  border-color: var(--tool-primary);
+  background: #f0f2ff;
+}
+
+/* ---- Status/Loading ---- */
+:where(.loading, .status) {
+  text-align: center;
+  color: var(--tool-text-muted);
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* ---- No Result ---- */
+:where(.no-result) {
+  text-align: center;
+  color: var(--tool-text-muted);
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  padding: 1rem;
+}
+
+/* ---- Converter layout (common in unit converters) ---- */
+:where(.converter) {
+  background: var(--tool-bg);
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: var(--tool-shadow);
+  border: 1px solid var(--tool-border-light);
+  margin: 0.5rem 0;
+}
+
+/* ---- Input section spacers ---- */
+:where(.input-section) {
+  margin-bottom: 1rem;
+}
+
+/* ---- Dark Mode ---- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --tool-bg: #1a1a2e;
+    --tool-bg-alt: #1e1e32;
+    --tool-border: #333;
+    --tool-border-light: #2a2a3e;
+    --tool-text: #e0e0e0;
+    --tool-text-secondary: #aaa;
+    --tool-text-muted: #888;
+    --tool-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+
+  :where(.tool-header) {
+    border-bottom-color: #2a2a3e;
+  }
+  :where(.tool-header) :where(h2) {
+    background: linear-gradient(135deg, #8899ff 0%, #a076cc 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  :where(.input, .search-input, .amount-input) {
+    background: #1a1a2e;
+    border-color: #333;
+    color: #e0e0e0;
+  }
+  :where(.input, .search-input, .amount-input)::placeholder {
+    color: #666;
+  }
+  :where(select.input, select) {
+    background-color: #1a1a2e;
+  }
+
+  :where(.textarea) {
+    background: #1a1a2e;
+    border-color: #333;
+    color: #e0e0e0;
+  }
+
+  :where(.result-card, .result-box, .converter) {
+    background: #1a1a2e;
+    border-color: #2a2a3e;
+  }
+  :where(.result-row) {
+    border-bottom-color: #252540;
+  }
+  :where(.r-name) { color: #888; }
+  :where(.r-val) { color: #ddd; }
+
+  :where(.error, .error-msg) {
+    background: #2d1b1b;
+    border-color: #4a2e2e;
+    color: #e57373;
+  }
+
+  :where(.tabs, .main-tabs, .sub-tabs, .mode-tabs, .diff-tabs) :where(button, .tab) {
+    background: #1e1e32;
+    border-color: #333;
+    color: #999;
+  }
+  :where(.tabs, .main-tabs, .sub-tabs, .mode-tabs, .diff-tabs) :where(button, .tab):hover {
+    background: #252545;
+    border-color: #445;
+    color: #8899ff;
+  }
+
+  :where(.upload-area) {
+    border-color: #444;
+    background: #1a1a2e;
+  }
+  :where(.upload-area):hover {
+    border-color: #667eea;
+    background: #252545;
+  }
+
+  :where(.btn-copy, .btn-sm, .btn-clear, .swap-btn, .qp-btn) {
+    background: #252545;
+    border-color: #3a3a5e;
+    color: #8899ff;
+  }
+  :where(.btn-copy, .btn-sm, .btn-clear, .swap-btn, .qp-btn):hover {
+    background: #3a3a5e;
+    border-color: #5a5a7e;
+  }
+}

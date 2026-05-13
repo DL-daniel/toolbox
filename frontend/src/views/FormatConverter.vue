@@ -53,8 +53,13 @@ async function copyOutput() {
 
 <template>
   <div class="tool">
-    <h2>{{ t('formatConv.title') }}</h2>
-    <p class="subtitle">{{ t('formatConv.subtitle') }}</p>
+    <div class="tool-header">
+
+      <h2>{{ t('formatConv.title') }}</h2>
+
+      <p class="desc">{{ t('formatConv.subtitle') }}</p>
+
+    </div>
 
     <div class="format-bar">
       <div class="format-pair">

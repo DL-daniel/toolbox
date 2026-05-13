@@ -56,8 +56,13 @@ async function copy(text: string, label: string) {
 
 <template>
   <div class="tool">
-    <h2>{{ t('rsaGenerator.title') }}</h2>
-    <p class="subtitle">{{ t('rsaGenerator.subtitle') }}</p>
+    <div class="tool-header">
+
+      <h2>{{ t('rsaGenerator.title') }}</h2>
+
+      <p class="desc">{{ t('rsaGenerator.subtitle') }}</p>
+
+    </div>
 
     <div class="controls">
       <div class="ctrl-group">

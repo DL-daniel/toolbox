@@ -65,8 +65,13 @@ const isDiff = computed(() => mode.value === 'diff')
 
 <template>
   <div class="tool">
-    <h2>{{ t('dateDiff.title') }}</h2>
-    <p class="subtitle">{{ t('dateDiff.subtitle') }}</p>
+    <div class="tool-header">
+
+      <h2>{{ t('dateDiff.title') }}</h2>
+
+      <p class="desc">{{ t('dateDiff.subtitle') }}</p>
+
+    </div>
 
     <!-- Mode switch -->
     <div class="mode-tabs">

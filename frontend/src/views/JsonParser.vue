@@ -103,8 +103,13 @@ function typeClass(t: string) {
 
 <template>
   <div class="tool">
-    <h2>{{ t('jsonParser.title') }}</h2>
-    <p class="subtitle">{{ t('jsonParser.subtitle') }}</p>
+    <div class="tool-header">
+
+      <h2>{{ t('jsonParser.title') }}</h2>
+
+      <p class="desc">{{ t('jsonParser.subtitle') }}</p>
+
+    </div>
 
     <div style="display:flex;gap:0.5rem;margin-bottom:0.5rem">
       <textarea v-model="raw" :placeholder="t('jsonParser.placeholder')" rows="8" class="textarea" spellcheck="false" style="flex:1"></textarea>
