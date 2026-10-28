@@ -43,6 +43,7 @@ import PressureConverter from '@/views/PressureConverter.vue'
 import LengthConverter from '@/views/LengthConverter.vue'
 import AreaConverter from '@/views/AreaConverter.vue'
 import CurrencyConverter from '@/views/CurrencyConverter.vue'
+import TextToImage from '@/views/TextToImage.vue'
 
 const routes = [
   {
@@ -307,6 +308,12 @@ const routes = [
     name: 'CurrencyConverter',
     component: CurrencyConverter,
     meta: { title: '汇率换算', description: '全球货币实时汇率换算，支持美元欧元人民币日元英镑等30+种货币，自动获取最新汇率' },
+  },
+  {
+    path: '/text-to-image',
+    name: 'TextToImage',
+    component: TextToImage,
+    meta: { title: '文字转图片', description: '将文本转换为图片，支持自定义字体、颜色、尺寸、背景，一键下载PNG，适用于社交媒体配图制作' },
   },
 ]
 

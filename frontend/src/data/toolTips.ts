@@ -104,6 +104,13 @@ export const toolTips: Record<string, ToolTip[]> = {
     { icon: '📌', zh: '支持九宫格位置选择（左上、居中、右下等）', en: 'Choose from 9 positions: top-left, center, bottom-right, etc.' },
     { icon: '⬇️', zh: '预览满意后点击"下载"保存打水印后的图片', en: 'Preview and click "Download" to save the watermarked image' },
   ],
+  textToImage: [
+    { icon: '✏️', zh: '输入文字后点击渲染即可预览效果', en: 'Enter text and click Render to preview' },
+    { icon: '🎨', zh: '支持自定义字体、字号、颜色和背景色', en: 'Customize font, size, text color, and background' },
+    { icon: '📐', zh: '支持多种预设社交媒体尺寸（OG、Twitter、Instagram等）', en: 'Use presets for social media sizes (OG, Twitter, Instagram, etc.)' },
+    { icon: '⬇️', zh: '点击下载按钮保存为PNG图片', en: 'Click Download to save as a PNG image' },
+    { icon: '📋', zh: '支持复制图片到剪贴板，直接粘贴到其他应用', en: 'Copy image to clipboard for pasting into other apps' },
+  ],
   pdfMerger: [
     { icon: '📂', zh: '上传多个 PDF 文件，拖动调整合并顺序', en: 'Upload multiple PDF files and drag to reorder them' },
     { icon: '🗑️', zh: '不需要的文件可通过移除按钮删除', en: 'Remove unwanted files with the delete button' },

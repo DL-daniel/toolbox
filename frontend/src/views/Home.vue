@@ -60,6 +60,7 @@ const categories: ToolCategory[] = [
     nameKey: 'home.category.document',
     icon: '📄',
     tools: [
+      { titleKey: 'textToImage.title', descKey: 'textToImage.desc', icon: '🖼️', route: '/text-to-image' },
       { titleKey: 'imageWatermark.title', descKey: 'imageWatermark.desc', icon: '🖼️', route: '/image-watermark' },
       { titleKey: 'pdfMerger.title', descKey: 'pdfMerger.desc', icon: '📄', route: '/pdf-merger' },
       { titleKey: 'pdfWatermark.title', descKey: 'pdfWatermark.desc', icon: '💧', route: '/pdf-watermark' },
